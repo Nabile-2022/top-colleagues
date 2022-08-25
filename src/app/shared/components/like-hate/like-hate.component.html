@@ -1,0 +1,8 @@
+<div class="row row-cols-lg-auto g-3 align-items-center">
+  <div class="col">
+    <button class="btn btn-success" (click)="like()" [disabled]="score >= 1000">J'aime</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-danger" (click)="hate()" [disabled]="score <= -1000">Je déteste</button>
+  </div>
+</div>

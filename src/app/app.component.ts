@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'top-colleagues';
+
+  handleOutput(eventData: string)
+  {
+    alert('Handling output emitter: ' + eventData);
+  }
 }

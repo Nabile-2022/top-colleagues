@@ -1,1 +1,22 @@
-<p>collegues works!</p>
+<!-- https://angular.io/guide/template-overview -->
+<h1>Template</h1>
+
+<!-- [] = Property binding: binds an html tag attribute to a variable. -->
+<img [src]="image" alt="image from a binding" style="height: 256px">
+
+<!-- * = Angular's structural directive. -->
+<!-- {{}} = Expression interpolation. -->
+<!-- ?. =  Elvis operator. -->
+<!-- | = Pipes. The shell kind. -->
+<p *ngIf="field">{{field | uppercase}}</p>
+
+<!-- # = Local variable declaration and assignment. -->
+<!-- () = Event binding. -->
+<input (input)="onChange(input.value)" type="text" class="form-control" #input>
+<br>
+
+<!-- [(ngModel)] = Two-way property association. -->
+<input type="text" [(ngModel)]="twoWayField">
+<p>Two-way field: {{twoWayField}}</p>
+
+<button (click)="fireOutputEmitter()" class="btn btn-primary">Output emitter</button>

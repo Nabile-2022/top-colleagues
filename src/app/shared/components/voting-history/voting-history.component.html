@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Historique</h3>
+    </div>
+    <div class="card-body">
+      <div class="row" *ngFor="let vote of votes">
+        <div class="col">
+          <img src="{{vote.colleague.photo}}" alt="photo">
+        </div>
+        <div class="col">
+          <p>{{vote.colleague.pseudo}}</p>
+          <p>{{getVoteText(vote)}}</p>
+          <button class="btn btn-danger" (click)="delete(vote)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

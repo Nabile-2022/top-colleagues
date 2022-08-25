@@ -1,0 +1,44 @@
+<div class="row m-3">
+  <h2>Ajouter un client</h2>
+  <div class="row row-cols-lg-auto g-3 align-items-center mb-2">
+    <div class="col">
+      <div class="input-group">
+        <div class="input-group-text">Nom</div>
+        <input type="text" class="form-control" name="nom" [(ngModel)]="client.nom">
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-group">
+        <div class="input-group-text">Prénom</div>
+        <input type="text" class="form-control" name="prenom" [(ngModel)]="client.prenom">
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="input-group">
+      <div class="input-group-text">Adresse</div>
+      <input type="text" class="form-control" name="adresse" [(ngModel)]="client.adresse">
+    </div>
+  </div>
+  <div class="row mb-2">
+    <button (click)="addClient()" class="btn btn-primary">Ajouter</button>
+  </div>
+</div>
+<div class="row m-3">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Adresse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.nom}}</td>
+        <td>{{client.prenom}}</td>
+        <td>{{client.adresse}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
