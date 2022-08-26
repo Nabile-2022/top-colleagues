@@ -1,12 +1,8 @@
 <div class="card text-center align-content-center align-items-center m-2" style="width: 18rem">
   <div class="card-body">
-    <div class="row m-2">
-      <img class="card-img-top" src="{{colleague.photo}}" alt="photo">
-      <div>{{colleague.pseudo | uppercase}}</div>
-      <div>{{colleague.score | score}}</div>
-    </div>
-    <div class="row">
-      <tc-like-hate (voteEvent)="onVote($event)" [score]="colleague.score"></tc-like-hate>
-    </div>
+    <img class="card-img-top" src="{{colleague.photo}}" alt="photo">
+    <h5 class="card-title">{{colleague.pseudo | uppercase}}</h5>
+    <p class="card-text">{{colleague.score | score}}</p>
+    <tc-like-hate (voteEvent)="onVote($event)" [score]="colleague.score"></tc-like-hate>
   </div>
 </div>
