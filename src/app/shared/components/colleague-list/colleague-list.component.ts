@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
 import { Vote } from 'src/app/models/vote';
+import { ColleagueService } from 'src/app/providers/colleague.service';
+import { VoteService } from 'src/app/providers/vote.service';
 
 @Component({
   selector: 'tc-colleague-list',
@@ -9,27 +11,18 @@ import { Vote } from 'src/app/models/vote';
 })
 export class ColleagueListComponent implements OnInit
 {
-  @Input() colleagues!: Array<Colleague>;
-  @Input() votes!: Array<Vote>;
-
-  constructor() { }
+  /**
+   *
+   * @param colleagueService Dependency injection of a service
+   */
+  constructor(public colleagueService: ColleagueService, public voteService: VoteService) { }
 
   ngOnInit(): void
   {
-    this.colleagues = [];
-
-    for (let i = 0; i < 10; i++)
-    {
-      this.colleagues.push({
-        pseudo: 'Test',
-        score: 1000 * Math.sign(Math.random() - 0.5),
-        photo: 'assets/logo.svg'
-      });
-    }
   }
 
   onVote(vote: Vote)
   {
-    this.votes.unshift({...vote});
+    this.voteService.add(vote);
   }
 }
