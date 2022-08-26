@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
 import { LikeHate } from 'src/app/models/like-hate';
+import { Vote } from 'src/app/models/vote';
 
 @Component({
   selector: 'tc-colleague',
@@ -10,6 +11,8 @@ import { LikeHate } from 'src/app/models/like-hate';
 export class ColleagueComponent implements OnInit
 {
   @Input() colleague!: Colleague;
+
+  @Output() voteEvent = new EventEmitter<Vote>();
 
   constructor() { }
 
@@ -28,5 +31,10 @@ export class ColleagueComponent implements OnInit
         this.colleague.score--;
         break;
     }
+
+    this.voteEvent.emit({
+      colleague: {...this.colleague},
+      vote: vote
+    });
   }
 }

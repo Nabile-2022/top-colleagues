@@ -15,20 +15,6 @@ export class VotingHistoryComponent implements OnInit
 
   ngOnInit(): void
   {
-    this.votes = [];
-    const noms = ['Sylvie', 'Robert'];
-
-    for (let i = 0; i < 4; i++)
-    {
-      this.votes.push({
-        colleague: {
-          pseudo: noms[Math.floor(Math.random() * noms.length)],
-          photo: 'assets/logo.svg',
-          score: Math.floor(Math.random() * 1000)
-        },
-        vote: Math.floor(Math.random() * 2)
-      });
-    }
   }
 
   getVoteText(vote: Vote): String

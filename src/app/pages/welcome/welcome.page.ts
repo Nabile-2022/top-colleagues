@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Vote } from 'src/app/models/vote';
 
 @Component({
   selector: 'tc-welcome',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomePage implements OnInit
 {
+  votes: Array<Vote> = [];
+
   constructor() { }
 
   ngOnInit(): void

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
+import { Vote } from 'src/app/models/vote';
 
 @Component({
   selector: 'tc-colleague-list',
@@ -9,6 +10,7 @@ import { Colleague } from 'src/app/models/colleague';
 export class ColleagueListComponent implements OnInit
 {
   @Input() colleagues!: Array<Colleague>;
+  @Input() votes!: Array<Vote>;
 
   constructor() { }
 
@@ -24,5 +26,10 @@ export class ColleagueListComponent implements OnInit
         photo: 'assets/logo.svg'
       });
     }
+  }
+
+  onVote(vote: Vote)
+  {
+    this.votes.unshift({...vote});
   }
 }
