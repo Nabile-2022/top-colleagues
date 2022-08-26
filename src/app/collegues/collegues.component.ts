@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ColleguesComponent implements OnInit
 {
-  image = "/assets/logo.svg";
+  image = "assets/logo.svg";
   field = "i am a typescript field";
   twoWayField!: string; // ! = Non-null assertion operator. Makes the compiler ignore supposedly undefined vars.
 
