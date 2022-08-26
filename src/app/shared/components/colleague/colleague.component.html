@@ -1,6 +1,6 @@
-<div class="card text-center align-content-center align-items-center m-2" style="width: 18rem">
+<div class="card text-center align-content-center align-items-center m-2" style="width: 16rem">
   <div class="card-body">
-    <img class="card-img-top" src="{{colleague.photo}}" alt="photo">
+    <img class="card-img-top" style="width:4rem" src="{{colleague.photo}}" alt="photo">
     <h5 class="card-title">{{colleague.pseudo | uppercase}}</h5>
     <p class="card-text">{{colleague.score | score}}</p>
     <tc-like-hate (voteEvent)="onVote($event)" [score]="colleague.score"></tc-like-hate>

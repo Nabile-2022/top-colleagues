@@ -4,9 +4,9 @@
       <h3>Historique</h3>
     </div>
     <div class="card-body">
-      <div class="row" *ngFor="let vote of votes">
-        <div class="col">
-          <img src="{{vote.colleague.photo}}" alt="photo">
+      <div class="row mb-3" *ngFor="let vote of votes">
+        <div class="col-3 text-center">
+          <img src="{{vote.colleague.photo}}" alt="photo" style="width: 4rem">
         </div>
         <div class="col">
           <p>{{vote.colleague.pseudo}}</p>

@@ -21,7 +21,7 @@ export class ColleagueListComponent implements OnInit
       this.colleagues.push({
         pseudo: 'Test',
         score: 1000 * Math.sign(Math.random() - 0.5),
-        photo: ''
+        photo: '/assets/logo.svg'
       });
     }
   }

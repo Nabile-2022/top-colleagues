@@ -23,7 +23,7 @@ export class VotingHistoryComponent implements OnInit
       this.votes.push({
         colleague: {
           pseudo: noms[Math.floor(Math.random() * noms.length)],
-          photo: '',
+          photo: '/assets/logo.svg',
           score: Math.floor(Math.random() * 1000)
         },
         vote: Math.floor(Math.random() * 2)
