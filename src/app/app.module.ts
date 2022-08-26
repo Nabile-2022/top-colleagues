@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ColleguesComponent } from './collegues/collegues.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { SharedModule } from './shared/shared.module';
+import { WelcomeModule } from './welcome/welcome.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    WelcomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
