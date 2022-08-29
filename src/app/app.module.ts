@@ -7,12 +7,16 @@ import { ColleguesComponent } from './collegues/collegues.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { SharedModule } from './shared/shared.module';
 import { WelcomeModule } from './welcome/welcome.module';
+import { Composant1Component } from './demoObs/composant1/composant1.component';
+import { Composant2Component } from './demoObs/composant2/composant2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ColleguesComponent,
-    AddClientComponent
+    AddClientComponent,
+    Composant1Component,
+    Composant2Component
   ],
   imports: [
     BrowserModule,

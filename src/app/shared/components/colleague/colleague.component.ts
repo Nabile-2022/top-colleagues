@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from 'src/app/models/vote';
+import { ReactionService } from 'src/app/providers/reaction.service';
 
 @Component({
   selector: 'tc-colleague',
@@ -33,7 +34,7 @@ export class ColleagueComponent implements OnInit
     }
 
     this.voteEvent.emit({
-      colleague: {...this.colleague},
+      colleague: { ...this.colleague },
       vote: vote
     });
   }
