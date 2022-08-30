@@ -7,7 +7,8 @@ import { ReactionService } from 'src/app/providers/reaction.service';
 @Component({
   selector: 'tc-colleague',
   templateUrl: './colleague.component.html',
-  styleUrls: ['./colleague.component.scss']
+  styleUrls: ['./colleague.component.scss'],
+  providers: [ReactionService] // 'providers' creates an instance per component on injection, rather than using a singleton.
 })
 export class ColleagueComponent implements OnInit
 {
@@ -15,7 +16,7 @@ export class ColleagueComponent implements OnInit
 
   @Output() voteEvent = new EventEmitter<Vote>();
 
-  constructor() { }
+  constructor(private reactionService: ReactionService) { }
 
   ngOnInit(): void
   {
@@ -33,6 +34,7 @@ export class ColleagueComponent implements OnInit
         break;
     }
 
+    this.reactionService.react(vote);
     this.voteEvent.emit({
       colleague: { ...this.colleague },
       vote: vote
